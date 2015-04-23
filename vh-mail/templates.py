@@ -21,6 +21,7 @@ DKIM_STRICT = 1
 
 %(tls_enable)s
 TLS_ADVERTISE_HOSTS = *
+TLS_REQUIRE_CIPHERS = ALL:!ADH:+HIGH:+MEDIUM:-LOW:-SSLv2:-SSLv3:-EXP
 TLS_CERTIFICATE = %(tls_certificate)s
 TLS_PRIVATEKEY = %(tls_privatekey)s
 TLS_VERIFY_CERTIFICATES = ${if exists{/etc/ssl/certs/ca-certificates.crt} {/etc/ssl/certs/ca-certificates.crt} {/dev/null}}
